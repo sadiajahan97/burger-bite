@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border m-0 p-0;
+}
+
+html {
+  font-size: 16px;
+}
+
+#root {
+  @apply bg-bun grid text-patty;
+  font-family: 'Roboto', sans-serif;
+  grid-template-columns: 85vw 15vw;
+  grid-template-rows: 142px calc(100vh - 142px);
+}
+
+h1 {
+  @apply absolute;
+  left: -99999px;
+}
+
+#pankha-wings,
+#desserts {
+  @apply border-b border-lightpatty;
+}
+
+li {
+  @apply border-b border-lightpatty gap-x-4 grid items-center list-none p-4;
+  grid-template-columns: 250px 1fr;
+}
+
+:is(#pankha-wings, #desserts) li:last-of-type {
+  @apply border-none;
+}
+
+figure {
+  @apply grid place-content-center rounded;
+  background-image: radial-gradient(circle, var(--lightketchup), var(--ketchup));
+  height: 250px;
+}
+
+figure img {
+  @apply inline-block;
+  height: 150px;
+}
+
+#shakes img {
+  @apply rounded;
+  height: 250px;
+}
+
+figcaption {
+  @apply absolute;
+  left: -99999px;
+}
+
+button:hover {
+  filter: brightness(2);
+}
