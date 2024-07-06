@@ -40,7 +40,7 @@ li {
 }
 
 figure {
-  @apply grid place-content-center rounded;
+  @apply border border-lightpatty grid place-content-center rounded;
   background-image: radial-gradient(circle, var(--lightketchup), var(--ketchup));
   height: 250px;
 }
@@ -58,8 +58,4 @@ figure img {
 figcaption {
   @apply absolute;
   left: -99999px;
-}
-
-button:hover {
-  filter: brightness(2);
 }
