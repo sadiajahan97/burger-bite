@@ -47,7 +47,7 @@ export default function ({ item }: ItemProps) {
         <dd className='pt-4'>
           <button
             onClick={addOrderItem}
-            className='bg-patty border-none font-bold px-4 py-2 rounded text-bun w-fit'>
+            className='bg-patty border-none font-bold hover:scale-110 hover:shadow hover:shadow-patty px-4 py-2 rounded text-bun w-fit'>
             +ADD
           </button>
         </dd>
