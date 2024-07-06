@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { initializeAppCheck, ReCaptchaEnterpriseProvider } from 'firebase/app-check';
 import { getFirestore, collection } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
@@ -13,6 +14,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+initializeAppCheck(app, {
+  provider: new ReCaptchaEnterpriseProvider('6LeclwkqAAAAAFifMicdsBF8HK1fPZ-W-lqRUZzy'),
+  isTokenAutoRefreshEnabled: true,
+});
 const db = getFirestore(app);
 export const itemsCollection = collection(db, 'items');
 export const ordersCollection = collection(db, 'orders');
