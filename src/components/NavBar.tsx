@@ -15,12 +15,12 @@ export default function () {
     <nav className='gap-x-12 grid grid-cols-4'>
       <Link
         to='/'
-        className='hover:scale-110 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>
+        className='hover:scale-105 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>
         <FaBurger title='Home' />
       </Link>
       <Link
         to='/cart'
-        className='hover:scale-110 hover:shadow hover:shadow-bun p-2 rounded relative text-5xl text-bun'>
+        className='hover:scale-105 hover:shadow hover:shadow-bun p-2 rounded relative text-5xl text-bun'>
         <FaCartShopping title='Cart' />
         {total > 0 && (
           <span className='absolute bg-patty bottom-10 font-bold h-6 inline-block left-10 py-1 rounded-xl text-base leading-none text-bun text-center w-6 z-10'>
@@ -30,12 +30,12 @@ export default function () {
       </Link>
       <Link
         to='/about'
-        className='hover:scale-110 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>
+        className='hover:scale-105 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>
         <FaInfoCircle title='About' />
       </Link>
       <Link
         to='/contact'
-        className='hover:scale-110 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>
+        className='hover:scale-105 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>
         <FaPhone title='Contact' />
       </Link>
     </nav>

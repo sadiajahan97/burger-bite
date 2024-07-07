@@ -29,6 +29,7 @@ export default function ({ children }: DataProviderProps) {
   useEffect(() => {
     async function setItems() {
       setMenu(await getItems());
+      setSearchItems(await getItems());
     }
     setItems();
   }, []);

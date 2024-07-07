@@ -10,7 +10,7 @@ export default function () {
           <a
             key={index}
             href={`#${category.replace(' ', '-').toLowerCase()}`}
-            className='hover:scale-110 hover:shadow hover:shadow-bun py-2 rounded w-full'>
+            className='hover:scale-105 hover:shadow hover:shadow-bun py-2 rounded w-full'>
             {category}
           </a>
         ))}

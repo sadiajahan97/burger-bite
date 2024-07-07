@@ -6,7 +6,9 @@
 @tailwind utilities;
 
 * {
-  @apply box-border m-0 p-0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -20,42 +22,12 @@ html {
   grid-template-rows: 142px calc(100vh - 142px);
 }
 
-h1 {
-  @apply absolute;
-  left: -99999px;
-}
-
-#pankha-wings,
-#desserts {
-  @apply border-b border-lightpatty;
-}
-
-li {
-  @apply border-b border-lightpatty gap-x-4 grid items-center list-none p-4;
-  grid-template-columns: 250px 1fr;
-}
-
-:is(#pankha-wings, #desserts) li:last-of-type {
-  @apply border-none;
-}
-
 figure {
-  @apply border border-lightpatty grid place-content-center rounded;
+  @apply border border-lightpatty grid h-[250px] place-content-center rounded;
   background-image: radial-gradient(circle, var(--lightketchup), var(--ketchup));
-  height: 250px;
-}
-
-figure img {
-  @apply inline-block;
-  height: 150px;
 }
 
 #shakes img {
-  @apply rounded;
+  border-radius: 0.25rem;
   height: 250px;
-}
-
-figcaption {
-  @apply absolute;
-  left: -99999px;
 }

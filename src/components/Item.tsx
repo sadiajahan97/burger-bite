@@ -6,9 +6,10 @@ import fetchDownloadURL from '../utils/fetchDownloadURL';
 
 interface ItemProps {
   item: DocumentData;
+  categoryItemsLength: number;
 }
 
-export default function ({ item }: ItemProps) {
+export default function ({ item, categoryItemsLength }: ItemProps) {
   const data = useContext(DataContext)!;
   const [image, setImage] = useState('');
   useEffect(() => {
@@ -34,11 +35,23 @@ export default function ({ item }: ItemProps) {
     }
     data.setTotal(data.total + item.price);
   }
+  let liClassName =
+    'border-b border-lightpatty gap-x-4 grid grid-cols-[250px_1fr] items-center list-none p-4';
+  if (categoryItemsLength % 2 !== 0) {
+    liClassName += ' last:border-none';
+  }
   return (
-    <li>
+    <li className={liClassName}>
       <figure>
-        {image && <img src={image} alt={`${item.image}`} loading='lazy' />}
-        <figcaption>{item.name}</figcaption>
+        {image && (
+          <img
+            src={image}
+            alt={`${item.image}`}
+            loading='lazy'
+            className='h-[150px] inline-block'
+          />
+        )}
+        <figcaption className='absolute left-[-99999px]'>{item.name}</figcaption>
       </figure>
       <dl>
         <dt className='font-bold text-xl'>{item.name}</dt>
@@ -47,7 +60,7 @@ export default function ({ item }: ItemProps) {
         <dd className='pt-4'>
           <button
             onClick={addOrderItem}
-            className='bg-patty border-none font-bold hover:scale-110 hover:shadow hover:shadow-patty px-4 py-2 rounded text-bun w-fit'>
+            className='bg-patty border-none font-bold hover:scale-105 hover:shadow hover:shadow-patty px-4 py-2 rounded text-bun w-fit'>
             +ADD
           </button>
         </dd>
