@@ -7,16 +7,40 @@ export default function () {
   const [search, setSearch] = useState('');
   function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
-    const searchLowerCase = search.toLowerCase();
-    data.setSearchItems(
-      search
-        ? data.menu.filter(item =>
-            [item.category, item.name, item.description].some(field =>
-              field.toLowerCase().includes(searchLowerCase)
-            )
-          )
-        : data.menu
-    );
+    if (search) {
+      const searchLowerCase = search.toLowerCase();
+      const nameItems = data.menu.filter(item =>
+        item.name.toLowerCase().startsWith(searchLowerCase)
+      );
+      const categoryItems = data.menu.filter(item =>
+        item.category.toLowerCase().startsWith(searchLowerCase)
+      );
+      const descriptionItems = data.menu.filter(item =>
+        item.description.toLowerCase().startsWith(searchLowerCase)
+      );
+      const otherNameItems = data.menu.filter(item =>
+        item.name.toLowerCase().includes(searchLowerCase)
+      );
+      const otherCategoryItems = data.menu.filter(item =>
+        item.category.toLowerCase().includes(searchLowerCase)
+      );
+      const otherDescriptionItems = data.menu.filter(item =>
+        item.description.toLowerCase().includes(searchLowerCase)
+      );
+      const uniqueSearchItems = new Set([
+        ...nameItems,
+        ...categoryItems,
+        ...descriptionItems,
+        ...otherNameItems,
+        ...otherCategoryItems,
+        ...otherDescriptionItems,
+      ]);
+      const searchItems = [...uniqueSearchItems];
+      data.setSearchItems(searchItems);
+    } else {
+      const searchItems = data.menu;
+      data.setSearchItems(searchItems);
+    }
   }
   return (
     <form
