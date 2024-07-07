@@ -10,7 +10,7 @@ export default function () {
         <section key={index} id={category.replace(' ', '-').toLowerCase()}>
           <h2 className='font-bold p-4 text-2xl'>{category}</h2>
           <ul className='grid grid-cols-2'>
-            {data.menu
+            {data.searchItems
               .filter(item => item.category === category)
               .map((item, index) => (
                 <Item key={index} item={item} />
