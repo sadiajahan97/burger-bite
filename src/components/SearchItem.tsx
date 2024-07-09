@@ -4,17 +4,17 @@ import { DataContext } from '../context/DataProvider';
 import { useState, useEffect } from 'react';
 import fetchDownloadURL from '../utils/fetchDownloadURL';
 
-interface ItemProps {
-  item: DocumentData;
-  categoryItemsLength: number;
+interface SearchItemProps {
+  searchItem: DocumentData;
+  searchItemsLength: number;
 }
 
-export default function ({ item, categoryItemsLength }: ItemProps) {
+export default function ({ searchItem, searchItemsLength }: SearchItemProps) {
   const data = useContext(DataContext)!;
   const [image, setImage] = useState('');
   useEffect(() => {
     async function getImage() {
-      const itemImage = await fetchDownloadURL(item.category, item.image);
+      const itemImage = await fetchDownloadURL(searchItem.category, searchItem.image);
       if (itemImage) {
         setImage(itemImage);
       }
@@ -22,36 +22,42 @@ export default function ({ item, categoryItemsLength }: ItemProps) {
     getImage();
   }, []);
   function addOrderItem() {
-    if (data.order.map(orderItem => orderItem.name).includes(item.name)) {
+    if (data.order.map(orderItem => orderItem.name).includes(searchItem.name)) {
       data.setOrder(
         data.order.map(orderItem =>
-          orderItem.name === item.name
+          orderItem.name === searchItem.name
             ? { ...orderItem, quantity: orderItem.quantity + 1 }
             : orderItem
         )
       );
     } else {
-      data.setOrder([...data.order, { name: item.name, price: item.price, quantity: 1 }]);
+      data.setOrder([
+        ...data.order,
+        { name: searchItem.name, price: searchItem.price, quantity: 1 },
+      ]);
     }
-    data.setTotal(data.total + item.price);
+    data.setTotal(data.total + searchItem.price);
   }
   let liClassName =
     'border-b border-lightpatty gap-x-4 grid grid-cols-[250px_1fr] items-center list-none p-4';
-  if (categoryItemsLength % 2 !== 0) {
+  if (searchItemsLength % 2 !== 0) {
     liClassName += ' last:border-none';
   }
-  const figureClassName = item.category === 'Shakes' ? 'shakes' : '';
-  const imgClassName = item.category === 'Shakes' ? 'block h-[250px] rounded' : 'block h-[150px]';
+  const figureClassName = searchItem.category === 'Shakes' ? 'shakes' : '';
+  const imgClassName =
+    searchItem.category === 'Shakes' ? 'block h-[250px] rounded' : 'block h-[150px]';
   return (
     <li className={liClassName}>
       <figure className={figureClassName}>
-        {image && <img src={image} alt={`${item.image}`} loading='lazy' className={imgClassName} />}
-        <figcaption className='absolute left-[-99999px]'>{item.name}</figcaption>
+        {image && (
+          <img src={image} alt={`${searchItem.image}`} loading='lazy' className={imgClassName} />
+        )}
+        <figcaption className='absolute left-[-99999px]'>{searchItem.name}</figcaption>
       </figure>
       <dl>
-        <dt className='font-bold text-xl'>{item.name}</dt>
-        <dd className='py-2'>{item.description}</dd>
-        <dd className='font-bold py-2'>BDT {item.price}</dd>
+        <dt className='font-bold text-xl'>{searchItem.name}</dt>
+        <dd className='py-2'>{searchItem.description}</dd>
+        <dd className='font-bold py-2'>BDT {searchItem.price}</dd>
         <dd className='pt-4'>
           <button
             onClick={addOrderItem}

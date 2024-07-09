@@ -5,8 +5,8 @@ import { FaSearch } from 'react-icons/fa';
 export default function () {
   const data = useContext(DataContext)!;
   const [search, setSearch] = useState('');
-  function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
-    setSearch(event.target.value);
+  function handleSearch(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     if (search) {
       const searchLowerCase = search.toLowerCase();
       const nameItems = data.menu.filter(item =>
@@ -43,17 +43,23 @@ export default function () {
     }
   }
   return (
-    <form
-      role='search'
-      className='bg-white border border-lightpatty flex focus-within:shadow focus-within:shadow-patty items-center p-2 text-xl'>
-      <FaSearch />
-      <input
-        type='text'
-        role='searchbox'
-        value={search}
-        onInput={(event: React.ChangeEvent<HTMLInputElement>) => handleSearch(event)}
-        className='border-none outline-none ml-2'
-      />
-    </form>
+    <section className='bg-bun border-b border-lightpatty flex p-4 sticky top-0 z-10'>
+      <h2></h2>
+      <form
+        role='search'
+        onSubmit={(event: React.FormEvent<HTMLFormElement>) => handleSearch(event)}
+        className='bg-white border border-lightpatty flex focus-within:shadow focus-within:shadow-patty items-center p-2 text-xl'>
+        <input
+          type='text'
+          role='searchbox'
+          value={search}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
+          className='outline-none mr-2'
+        />
+        <button>
+          <FaSearch />
+        </button>
+      </form>
+    </section>
   );
 }

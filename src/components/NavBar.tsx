@@ -1,10 +1,8 @@
 import { useContext } from 'react';
 import { DataContext } from '../context/DataProvider';
 import { Link } from 'react-router-dom';
-import { FaBurger } from 'react-icons/fa6';
-import { FaCartShopping } from 'react-icons/fa6';
-import { FaInfoCircle } from 'react-icons/fa';
-import { FaPhone } from 'react-icons/fa6';
+import { FaSearch, FaInfoCircle } from 'react-icons/fa';
+import { FaBurger, FaCartShopping, FaPhone } from 'react-icons/fa6';
 
 export default function () {
   const data = useContext(DataContext)!;
@@ -12,7 +10,12 @@ export default function () {
     return accumulator + orderItem.quantity;
   }, 0);
   return (
-    <nav className='gap-x-12 grid grid-cols-4'>
+    <nav className='gap-x-12 grid grid-cols-5'>
+      <Link
+        to='/search'
+        className='hover:scale-105 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>
+        <FaSearch title='Search' />
+      </Link>
       <Link
         to='/'
         className='hover:scale-105 hover:shadow hover:shadow-bun p-2 rounded text-5xl text-bun'>

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Menu from './components/Menu';
-import SideBar from './components/SideBar';
+import Search from './components/Search';
 
 export default function () {
   return (
@@ -9,8 +9,8 @@ export default function () {
       <Header />
       <Routes>
         <Route path='/' element={<Menu />} />
+        <Route path='/search' element={<Search />} />
       </Routes>
-      <SideBar />
     </>
   );
 }

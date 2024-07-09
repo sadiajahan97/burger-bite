@@ -16,10 +16,18 @@ html {
 }
 
 #root {
-  @apply bg-bun grid text-patty;
+  @apply bg-bun text-patty;
   font-family: 'Roboto', sans-serif;
+}
+
+.menu {
+  @apply grid;
   grid-template-columns: 85vw 15vw;
-  grid-template-rows: 142px calc(100vh - 142px);
+  height: calc(100vh - 142px);
+}
+
+.search {
+  height: calc(100vh - 142px);
 }
 
 figure {
@@ -27,7 +35,7 @@ figure {
   background-image: radial-gradient(circle, var(--lightketchup), var(--ketchup));
 }
 
-#shakes img {
-  border-radius: 0.25rem;
-  height: 250px;
+.shakes {
+  @apply border-none;
+  background-image: none;
 }
