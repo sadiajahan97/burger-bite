@@ -20,7 +20,7 @@ export default function ({ searchItem, searchItemsLength }: SearchItemProps) {
       }
     }
     getImage();
-  }, []);
+  }, [searchItem]);
   function addOrderItem() {
     if (data.order.map(orderItem => orderItem.name).includes(searchItem.name)) {
       data.setOrder(

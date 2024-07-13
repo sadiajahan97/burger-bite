@@ -8,7 +8,7 @@ export default function () {
     <section>
       <h2 className='mb-4 font-bold text-2xl'>Order Information</h2>
       <table className='text-center'>
-        <caption>Order Information</caption>
+        <caption className='absolute left-[-99999px]'>Order Information</caption>
         <thead className='border-b border-lightpatty'>
           <tr>
             <th>Item</th>

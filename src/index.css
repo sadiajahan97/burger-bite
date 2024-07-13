@@ -16,7 +16,7 @@ html {
 }
 
 #root {
-  @apply bg-bun text-patty;
+  @apply bg-bun min-h-screen text-patty;
   font-family: 'Roboto', sans-serif;
 }
 
