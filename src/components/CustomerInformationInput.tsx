@@ -75,11 +75,12 @@ export default function () {
           <legend className='font-bold'>Address</legend>
           <div role='form'>
             <label htmlFor='flat' className='content-center mr-4'>
-              Flat (Optional):
+              Flat:
             </label>
             <input
               type='text'
               id='flat'
+              required
               autoComplete='off'
               value={data.flat}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
