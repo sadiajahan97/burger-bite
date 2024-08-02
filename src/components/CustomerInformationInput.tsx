@@ -56,7 +56,7 @@ export default function () {
       <h2 className='mb-4 font-bold text-2xl'>Customer Information</h2>
       <form className='mb-12'>
         <div role='form' className='mb-2'>
-          <label htmlFor='name' className='pr-4'>
+          <label htmlFor='name' className='mr-4'>
             Name:
           </label>
           <input
@@ -68,13 +68,13 @@ export default function () {
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
               data.setName(event.target.value)
             }
-            className='border border-lightpatty leading-none outline-none p-2 w-60'
+            className='border border-lightpatty focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
           />
         </div>
-        <fieldset className='border border-lightpatty gap-y-2 grid grid-cols-2 p-2'>
+        <fieldset className='border border-lightpatty flex flex-wrap gap-y-2 justify-between p-2'>
           <legend className='font-bold'>Address</legend>
           <div role='form'>
-            <label htmlFor='flat' className='content-center'>
+            <label htmlFor='flat' className='content-center mr-4'>
               Flat (Optional):
             </label>
             <input
@@ -85,11 +85,11 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 data.setFlat(event.target.value)
               }
-              className='border border-lightpatty content-center leading-none outline-none p-2 w-60'
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
             />
           </div>
           <div role='form'>
-            <label htmlFor='house' className='content-center'>
+            <label htmlFor='house' className='content-center mr-4'>
               House:
             </label>
             <input
@@ -101,11 +101,11 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 data.setHouse(event.target.value)
               }
-              className='border border-lightpatty content-center leading-none outline-none p-2 w-60'
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
             />
           </div>
           <div role='form'>
-            <label htmlFor='road' className='content-center'>
+            <label htmlFor='road' className='content-center mr-4'>
               Road:
             </label>
             <input
@@ -117,11 +117,11 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 data.setRoad(event.target.value)
               }
-              className='border border-lightpatty content-center leading-none outline-none p-2 w-60'
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
             />
           </div>
           <div role='form'>
-            <label htmlFor='area' className='content-center'>
+            <label htmlFor='area' className='content-center mr-4'>
               Area:
             </label>
             <select
@@ -131,7 +131,7 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
                 data.setArea(event.target.value)
               }
-              className='border border-lightpatty content-center leading-none outline-none p-2 w-60'>
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'>
               {areaOptionsArray.map((areaOption, index) => (
                 <option key={index}>{areaOption}</option>
               ))}
@@ -139,7 +139,7 @@ export default function () {
           </div>
         </fieldset>
         <div role='form' className='mt-4'>
-          <label htmlFor='phone' className='pr-4'>
+          <label htmlFor='phone' className='mr-4'>
             Phone:
           </label>
           <input
@@ -151,7 +151,7 @@ export default function () {
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
               data.setPhone(event.target.value)
             }
-            className='border border-lightpatty leading-none outline-none p-2 w-60'
+            className='border border-lightpatty focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
           />
         </div>
       </form>

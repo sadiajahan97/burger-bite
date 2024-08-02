@@ -34,7 +34,7 @@ export default function () {
           <OrderInformation />
           <button
             onClick={handleOrderPlacement}
-            className='bg-patty border-none font-bold ml-48 mt-4 px-4 py-2 rounded text-bun w-fit'>
+            className='bg-patty border-none font-bold hover:scale-105 hover:shadow hover:shadow-patty ml-48 mt-4 px-4 py-2 rounded text-bun w-fit'>
             Place Order
           </button>
         </>
