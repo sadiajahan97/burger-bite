@@ -5,7 +5,6 @@ import getItems from '../utils/getItems';
 
 interface DataContextType {
   menu: DocumentData[];
-  setMenu: React.Dispatch<React.SetStateAction<DocumentData[]>>;
   searchItems: DocumentData[];
   setSearchItems: React.Dispatch<React.SetStateAction<DocumentData[]>>;
   order: OrderItemType[];
@@ -47,7 +46,6 @@ export default function ({ children }: DataProviderProps) {
     <DataContext.Provider
       value={{
         menu,
-        setMenu,
         searchItems,
         setSearchItems,
         order,

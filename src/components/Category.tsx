@@ -8,7 +8,7 @@ interface CategoryProps {
 
 export default function ({ category }: CategoryProps) {
   const data = useContext(DataContext)!;
-  const categoryItems = data.searchItems.filter(item => item.category === category);
+  const categoryItems = data.menu.filter(item => item.category === category);
   const categoryItemsLength = categoryItems.length;
   const sectionClassName = categoryItemsLength % 2 === 0 ? '' : 'border-b border-lightpatty';
   return (
