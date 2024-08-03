@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
-import Item from './Item';
+import { DataContext } from '@/context/DataProvider';
+import Item from './components/Item';
 
 interface CategoryProps {
   category: string;

@@ -1,6 +1,6 @@
-import { OrderItemType } from '../utils/placeOrder';
+import { OrderItemType } from '@/utils/placeOrder';
 import { useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
+import { DataContext } from '@/context/DataProvider';
 
 interface OrderItemProps {
   orderItem: OrderItemType;

@@ -1,6 +1,6 @@
-import Logo from './Logo';
-import SearchBar from './SearchBar';
-import NavBar from './NavBar';
+import Logo from './components/Logo';
+import SearchBar from './components/SearchBar';
+import NavBar from './components/NavBar';
 
 export default function () {
   return (

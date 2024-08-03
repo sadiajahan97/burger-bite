@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { OrderInformationContext } from '../context/OrderInformationProvider';
-import ConfirmedCustomerInformation from './ConfirmedCustomerInformation';
-import ConfirmedOrderInformation from './ConfirmedOrderInformation';
+import { OrderInformationContext } from '@/context/OrderInformationProvider';
+import ConfirmedCustomerInformation from './components/ConfirmedCustomerInformation';
+import ConfirmedOrderInformation from './components/ConfirmedOrderInformation/ConfirmedOrderInformation';
 import { Link } from 'react-router-dom';
 
 export default function () {

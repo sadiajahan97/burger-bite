@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
+import { DataContext } from '@/context/DataProvider';
 import { Link } from 'react-router-dom';
 import { FaInfoCircle } from 'react-icons/fa';
 import { FaBurger, FaCartShopping, FaPhone } from 'react-icons/fa6';

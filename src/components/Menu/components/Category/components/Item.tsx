@@ -1,8 +1,8 @@
 import { DocumentData } from 'firebase/firestore';
 import { useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
+import { DataContext } from '@/context/DataProvider';
 import { useState, useEffect } from 'react';
-import fetchDownloadURL from '../utils/fetchDownloadURL';
+import fetchDownloadURL from '@/utils/fetchDownloadURL';
 
 interface ItemProps {
   item: DocumentData;

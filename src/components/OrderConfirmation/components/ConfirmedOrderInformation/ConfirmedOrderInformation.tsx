@@ -1,14 +1,15 @@
 import { useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
-import OrderItem from './OrderItem';
+import { OrderInformationContext } from '@/context/OrderInformationProvider';
+import { DocumentData } from 'firebase/firestore';
+import ConfirmedOrderItem from './components/ConfirmedOrderItem';
 
 export default function () {
-  const data = useContext(DataContext)!;
+  const data = useContext(OrderInformationContext)!;
+  const orderData: DocumentData[] = data.order[0]?.data?.order;
   return (
-    <section>
-      <h2 className='mb-4 font-bold text-2xl'>Order Information</h2>
+    <>
+      <h3 className='font-bold mb-2 mt-8'>Order Information</h3>
       <table className='text-center'>
-        <caption className='absolute left-[-99999px]'>Order Information</caption>
         <thead className='border-b border-lightpatty'>
           <tr>
             <th>Item</th>
@@ -18,8 +19,8 @@ export default function () {
           </tr>
         </thead>
         <tbody>
-          {data.order.map((orderItem, index) => (
-            <OrderItem key={index} orderItem={orderItem} />
+          {orderData.map((orderItem, index) => (
+            <ConfirmedOrderItem key={index} orderItem={orderItem} />
           ))}
         </tbody>
         <tfoot className='border-t border-lightpatty'>
@@ -27,10 +28,10 @@ export default function () {
             <th>Total</th>
             <td></td>
             <td></td>
-            <td>{data.total}</td>
+            <td>{data.order[0]?.data?.total}</td>
           </tr>
         </tfoot>
       </table>
-    </section>
+    </>
   );
 }

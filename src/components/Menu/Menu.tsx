@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
-import Category from './Category';
-import SideBar from './SideBar';
+import { DataContext } from '@/context/DataProvider';
+import Category from './components/Category/Category';
+import SideBar from './components/SideBar';
 
 export default function () {
   const data = useContext(DataContext)!;

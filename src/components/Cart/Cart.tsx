@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
-import { CustomerInformationContext } from '../context/CustomerInformationProvider';
+import { DataContext } from '@/context/DataProvider';
+import { CustomerInformationContext } from '@/context/CustomerInformationProvider';
 import { useNavigate } from 'react-router-dom';
-import placeOrder from '../utils/placeOrder';
-import CustomerInformationInput from './CustomerInformationInput';
-import OrderInformation from './OrderInformation';
+import placeOrder from '@/utils/placeOrder';
+import CustomerInformationInput from './components/CustomerInformationInput';
+import OrderInformation from './components/OrderInformation/OrderInformation';
 
 export default function () {
   const [errMsg, setErrMsg] = useState('');

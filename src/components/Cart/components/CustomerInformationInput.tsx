@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CustomerInformationContext } from '../context/CustomerInformationProvider';
+import { CustomerInformationContext } from '@/context/CustomerInformationProvider';
 
 export default function () {
   const data = useContext(CustomerInformationContext)!;

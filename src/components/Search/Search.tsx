@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { DataContext } from '../context/DataProvider';
-import SearchItem from './SearchItem';
+import { DataContext } from '@/context/DataProvider';
+import SearchItem from './components/SearchItem';
 
 export default function () {
   const data = useContext(DataContext)!;

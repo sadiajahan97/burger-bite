@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { DataContext } from '../context/DataProvider';
+import { DataContext } from '@/context/DataProvider';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 

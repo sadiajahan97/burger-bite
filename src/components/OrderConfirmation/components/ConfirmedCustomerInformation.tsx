@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { OrderInformationContext } from '../context/OrderInformationProvider';
+import { OrderInformationContext } from '@/context/OrderInformationProvider';
 import { DocumentData } from 'firebase/firestore';
 
 export default function () {
