@@ -53,13 +53,13 @@ export default function () {
       {data.order.length ? (
         <>
           <CustomerInformationInput />
+          {errMsg && <p className='font-bold mt-4 text-ketchup'>* {errMsg}</p>}
           <OrderInformation />
           <button
             onClick={handleOrderPlacement}
             className='bg-patty border-none font-bold hover:scale-105 hover:shadow hover:shadow-patty ml-48 mt-4 px-4 py-2 rounded text-bun w-fit'>
             Place Order
           </button>
-          {errMsg && <p className='mt-4 text-ketchup'>{errMsg}</p>}
         </>
       ) : (
         <p>Your cart is empty.</p>

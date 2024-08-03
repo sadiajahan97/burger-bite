@@ -49,15 +49,15 @@ export default function () {
     <form
       role='search'
       onSubmit={(event: React.FormEvent<HTMLFormElement>) => handleSearch(event)}
-      className='flex items-center text-xl'>
+      className='border border-lightpatty flex focus-within:shadow focus-within:shadow-patty items-center text-xl'>
       <input
         type='text'
         role='searchbox'
         value={search}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
-        className='border border-lightpatty focus:shadow focus:shadow-patty leading-none mr-2 outline-none p-2 w-60'
+        className='outline-none px-2 py-1 w-60'
       />
-      <button className='bg-patty hover:scale-105 hover:shadow hover:shadow-patty p-2 rounded text-bun'>
+      <button className='bg-patty hover:bg-bun hover:text-patty p-2 text-bun'>
         <FaSearch />
       </button>
     </form>

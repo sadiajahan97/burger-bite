@@ -14,7 +14,7 @@ export default function () {
         </li>
         <li>
           <span className='font-bold'>Address:</span>{' '}
-          {`Flat # ${customerData.address.flat}, House # ${customerData.address.house}, Road # ${customerData.address.road}, ${customerData.address.area}, Dhaka, Bangladesh`}
+          {`Flat No. ${customerData.address.flat}, House No. ${customerData.address.house}, Road No. ${customerData.address.road}, ${customerData.address.area}, Dhaka, Bangladesh`}
         </li>
         <li>
           <span className='font-bold'>Phone:</span> {customerData.phone}

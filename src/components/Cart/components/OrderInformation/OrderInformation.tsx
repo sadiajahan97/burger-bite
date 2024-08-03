@@ -5,7 +5,7 @@ import OrderItem from './components/OrderItem';
 export default function () {
   const data = useContext(DataContext)!;
   return (
-    <section>
+    <section className='mt-12'>
       <h2 className='mb-4 font-bold text-2xl'>Order Information</h2>
       <table className='text-center'>
         <caption className='absolute left-[-99999px]'>Order Information</caption>

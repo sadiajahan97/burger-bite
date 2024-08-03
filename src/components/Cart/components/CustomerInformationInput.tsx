@@ -54,7 +54,7 @@ export default function () {
   return (
     <section>
       <h2 className='mb-4 font-bold text-2xl'>Customer Information</h2>
-      <form className='mb-12'>
+      <form>
         <div role='form' className='mb-2'>
           <label htmlFor='name' className='mr-4'>
             Name:
@@ -67,7 +67,7 @@ export default function () {
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
               data.setName(event.target.value)
             }
-            className='border border-lightpatty focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
+            className='border border-lightpatty focus:shadow focus:shadow-patty outline-none px-2 py-1 w-60'
           />
         </div>
         <fieldset className='border border-lightpatty flex flex-wrap gap-y-2 justify-between p-2'>
@@ -84,7 +84,7 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 data.setFlat(event.target.value)
               }
-              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty outline-none px-2 py-1 w-60'
             />
           </div>
           <div role='form'>
@@ -99,7 +99,7 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 data.setHouse(event.target.value)
               }
-              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty outline-none px-2 py-1 w-60'
             />
           </div>
           <div role='form'>
@@ -114,7 +114,7 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 data.setRoad(event.target.value)
               }
-              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty outline-none px-2 py-1 w-60'
             />
           </div>
           <div role='form'>
@@ -127,7 +127,7 @@ export default function () {
               onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
                 data.setArea(event.target.value)
               }
-              className='border border-lightpatty content-center focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'>
+              className='border border-lightpatty content-center focus:shadow focus:shadow-patty outline-none px-2 py-1 w-60'>
               {areaOptionsArray.map((areaOption, index) => (
                 <option key={index}>{areaOption}</option>
               ))}
@@ -146,7 +146,7 @@ export default function () {
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
               data.setPhone(event.target.value)
             }
-            className='border border-lightpatty focus:shadow focus:shadow-patty leading-none outline-none p-2 w-60'
+            className='border border-lightpatty focus:shadow focus:shadow-patty outline-none px-2 py-1 w-60'
           />
         </div>
       </form>
