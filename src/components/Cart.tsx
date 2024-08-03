@@ -21,18 +21,22 @@ export default function () {
       customerData?.phone
     ) {
       const phonePattern = /^01\d{9}$/;
-      if (!phonePattern.test(customerData?.phone)) {
+      if (!phonePattern.test(customerData?.phone.trim())) {
         setErrMsg("Please enter an 11-digit number starting with '01'.");
         return;
       }
       setErrMsg('');
       const address = {
-        flat: customerData?.flat,
-        house: customerData?.house,
-        road: customerData?.road,
-        area: customerData?.area,
+        flat: customerData?.flat.trim(),
+        house: customerData?.house.trim(),
+        road: customerData?.road.trim(),
+        area: customerData?.area.trim(),
       };
-      const customer = { name: customerData?.name, address, phone: customerData?.phone };
+      const customer = {
+        name: customerData?.name.trim(),
+        address,
+        phone: customerData?.phone.trim(),
+      };
       if (await placeOrder(customer, data.order, data.total)) {
         navigate('/order-confirmation');
         data.setOrder([]);
