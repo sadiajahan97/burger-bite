@@ -62,7 +62,6 @@ export default function () {
           <input
             type='text'
             id='name'
-            required
             autoComplete='off'
             value={data.name}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -80,7 +79,6 @@ export default function () {
             <input
               type='text'
               id='flat'
-              required
               autoComplete='off'
               value={data.flat}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -96,7 +94,6 @@ export default function () {
             <input
               type='text'
               id='house'
-              required
               autoComplete='off'
               value={data.house}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -112,7 +109,6 @@ export default function () {
             <input
               type='text'
               id='road'
-              required
               autoComplete='off'
               value={data.road}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -127,7 +123,6 @@ export default function () {
             </label>
             <select
               id='area'
-              required
               value={data.area}
               onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
                 data.setArea(event.target.value)
@@ -146,7 +141,6 @@ export default function () {
           <input
             type='tel'
             id='phone'
-            required
             autoComplete='off'
             value={data.phone}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
