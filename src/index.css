@@ -21,8 +21,7 @@ html {
 }
 
 .menu {
-  @apply grid;
-  grid-template-columns: 85vw 15vw;
+  @apply grid grid-cols-[80vw_20vw] xl:grid-cols-[85vw_15vw];
   height: calc(100vh - 142px);
 }
 
@@ -31,7 +30,7 @@ html {
 }
 
 figure {
-  @apply border border-lightpatty grid h-[250px] place-content-center rounded;
+  @apply border border-lightpatty grid h-[200px] xl:h-[250px] place-content-center rounded;
   background-image: radial-gradient(circle, var(--lightketchup), var(--ketchup));
 }
 
